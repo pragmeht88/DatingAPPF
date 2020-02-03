@@ -29,6 +29,7 @@ import { MemberListResolver } from './_resolver/member-list.resolver';
 import { MemberEditResolver } from './_resolver/member-edit.resolver';
 import { UnsavedGuard } from './_guards/unsaved.guards';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { ListResolver } from './_resolver/list.resolver';
 
 
 
@@ -85,6 +86,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberDetailsResolver,
       MemberListResolver,
       MemberEditResolver,
+      ListResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
       UnsavedGuard
    ],

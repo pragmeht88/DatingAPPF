@@ -2,12 +2,14 @@ import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angu
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule } from 'ngx-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TimeAgoPipe } from 'time-ago-pipe';
+import { ButtonsModule } from 'ngx-bootstrap';
+
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -34,10 +36,10 @@ export function tokenGetter() {
    return localStorage.getItem('token');
 }
 
-export class CustomHammerConfig extends HammerGestureConfig  {
+export class CustomHammerConfig extends HammerGestureConfig {
    overrides = {
-       pinch: { enable: false },
-       rotate: { enable: false }
+      pinch: { enable: false },
+      rotate: { enable: false }
    };
 }
 
@@ -66,6 +68,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       BsDatepickerModule.forRoot(),
       NgxGalleryModule,
       BsDropdownModule.forRoot(),
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       JwtModule.forRoot({

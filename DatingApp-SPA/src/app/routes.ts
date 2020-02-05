@@ -11,6 +11,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './_resolver/member-edit.resolver';
 import { UnsavedGuard } from './_guards/unsaved.guards';
 import { ListResolver } from './_resolver/list.resolver';
+import { MessagesResolver } from './_resolver/messages.resolver';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -36,7 +37,8 @@ export const appRoutes: Routes = [
             },
             {
                 path: 'messages',
-                component: MessagesComponent
+                component: MessagesComponent,
+                resolve: { messages: MessagesResolver }
             },
             {
                 path: 'lists',
